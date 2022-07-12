@@ -24,3 +24,22 @@ const response = fetch("https://jsonplaceholder.typicode.com/users/")
 
 
 // site utilizado jsonplaceholder
+
+
+
+const addPost = ()  => {
+    fetch('https://jsonplaceholder.typicode.com/posts',{
+        method: 'POST',
+        body: JSON.stringify({
+            userId: 5,
+            title: 'titulo teste',
+            body: 'Eu fui inserido'
+        }),
+        headers: {
+            'Content-type': 'application/JSON; charset=UTF-8'
+        }
+    }).then(response => response.json())
+    .then(data => console.log(data))
+}
+
+addPost()
